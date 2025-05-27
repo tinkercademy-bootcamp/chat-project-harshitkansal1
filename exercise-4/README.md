@@ -12,6 +12,7 @@
 - How would you compile using make?
   - Just make a new target for common.o with the command g++ -c common.cc -o common.o and add common.o in the existing g++ commands for server client, along with adding dependancies for it in the targets.
 - How would you compile using VS Code?
+  - We can configure the tasks.json file in .vscode folder with the commands, or just run them by opening a terminal in vs code.
 
 ### Compiling vs Linking
 
