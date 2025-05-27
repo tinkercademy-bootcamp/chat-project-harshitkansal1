@@ -17,6 +17,7 @@
 ### Compiling vs Linking
 
 - What is the difference between compiling and linking in C++?
+  - First step is compiling which takes the code for each individual files and converts it into an object file which contains the assembly code and some other instructions for the linker to use, linker links the various objects files and the library files together to make the final executable.
 - What is the difference between creating an executable and creating a 
   library?
 - How do you compile a library, and then use that library to compile an
