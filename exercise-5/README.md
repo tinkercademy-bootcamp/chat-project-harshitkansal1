@@ -6,7 +6,8 @@
 
 - What's an easy way to identify the changes in source code from one exercise
   to another?
-    
+  - First we weill look at the directory structure to see if it is changed, then e can use the diff command from the command line, can also use the vimdiff command, there is inbuilt support in vs code also for seeing file changes.
+
 ## Using Classes
 
 - Here is one way to separate out the code into multiple files
