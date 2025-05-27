@@ -23,7 +23,7 @@
   - A library is a collection of precompiled code which is meant for re-use in other programs and cant be executed on it's own, whereas an executable is a program which can be executed.
 - How do you compile a library, and then use that library to compile an
   executable?
-
+  - We first compile the library files to object files and then use ar command to create static library archive from the object files, in the command for compiling executable we use -l flag for specifying library directory and -l flag for specifying library name.
 ### Reminder 
 [Quickstart tutorial to make](https://makefiletutorial.com/) - Learn make 
 fundamentals with practical examples and common patterns.
