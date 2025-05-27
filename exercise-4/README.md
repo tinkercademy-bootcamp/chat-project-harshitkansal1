@@ -10,6 +10,7 @@
 - How would you compile from the command line?
   first compile the common.cc in a common.o object file and that use that with the g++ commands to compile the server and client executables. Example g++ tcp_echo_client.cpp common.o -o client
 - How would you compile using make?
+  - Just make a new target for common.o with the command g++ -c common.cc -o common.o and add common.o in the existing g++ commands for server client, along with adding dependancies for it in the targets.
 - How would you compile using VS Code?
 
 ### Compiling vs Linking
