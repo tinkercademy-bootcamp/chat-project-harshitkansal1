@@ -12,6 +12,7 @@
 
 - Here is one way to separate out the code into multiple files
 - Is this the best way to do it? 
+  - Since there are multiple ways to do it, it is hard to define one way as best, it depends on the coding style and preferences of the people working in the project.
 - What are the advantages and disadvantages?
 
 ## Introduction to Namespace
