@@ -8,6 +8,7 @@
   `tcp_echo_client.cc` to separate `.h` and `.cc` files
   - After commiting once i learnt that only template functions or inline functions should be defined entirely in the header and rest it should only contain the declarations, so made the required changes.
 - How would you compile from the command line?
+  first compile the common.cc in a common.o object file and that use that with the g++ commands to compile the server and client executables. Example g++ tcp_echo_client.cpp common.o -o client
 - How would you compile using make?
 - How would you compile using VS Code?
 
