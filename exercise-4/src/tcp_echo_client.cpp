@@ -3,10 +3,8 @@
 #include <string>
 #include "common.h"
 
-sockaddr_in create_address(const std::string &server_ip, int port) {
-  sockaddr_in address;
-  address.sin_family = AF_INET;
-  address.sin_port = htons(port);
+sockaddr_in create_server_address(const std::string &server_ip, int port) {
+  sockaddr_in address = create_address(port);
 
   // Convert the server IP address to a binary format
   auto err_code = inet_pton(AF_INET, server_ip.c_str(), &address.sin_addr);
@@ -57,7 +55,7 @@ int main(int argc, char *argv[]) {
   std::string message = read_args(argc, argv);
 
   int my_socket = create_socket();
-  sockaddr_in server_address = create_address(kServerAddress, kPort);
+  sockaddr_in server_address = create_server_address(kServerAddress, kPort);
 
   connect_to_server(my_socket, server_address);
   send_and_receive_message(my_socket, message);
