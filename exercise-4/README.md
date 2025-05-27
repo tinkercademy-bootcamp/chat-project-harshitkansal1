@@ -32,5 +32,6 @@ fundamentals with practical examples and common patterns.
 
 - Is it better to have many small files spread across many directories, or
   a few large files across fewer directories?
+  - Generally it is better to have many small files spread across many directories, each indicating their specific purpose to make it easy to read the code.
 - Is there a difference in compilation time between the two?
 - How can you assess performance other than compilation speed?
