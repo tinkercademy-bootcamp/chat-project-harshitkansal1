@@ -53,4 +53,5 @@
 - How many senses do humans have?
   - 5 senses- touch, smell, taste, sight, hearing
 - When would you want to see something before you touch it?
+  - to know if it is safe to touch the thing and it would not do us any harm.
 - When would you want to touch something before you see it?
