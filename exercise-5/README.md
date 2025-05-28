@@ -47,7 +47,9 @@
   taste?
   - I think for code to taste good means that it is clean, elegant and easy to read and modify.
 - Is there an analogue for every sense?
+  - I think there can be an analogue for every sense in code to some extent.
 - What other code senses can you think of?
+  - 
 - How many senses do humans have?
 - When would you want to see something before you touch it?
 - When would you want to touch something before you see it?
