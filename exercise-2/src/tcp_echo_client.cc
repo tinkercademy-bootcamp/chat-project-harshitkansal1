@@ -40,16 +40,16 @@ void connect_to_server(int sock, sockaddr_in &server_address) {
   }
 }
 
-void send_and_receive_message(int sock, const std::string &message) {
-  const int kBufferSize = 1024;
-  // #Question - is buffer the best name we can use?
-  char buffer[kBufferSize] = {0};
-
-  // Send the message to the server
+void send_message(int sock , const std::string &message){
   send(sock, message.c_str(), message.size(), 0);
   std::cout << "Sent: " << message << "\n";
-
+}
+void receive_message(int sock){
   // Receive response from the server
+  const int kBufferSize = 1024;
+  // #Question - is buffer the best name we can use?
+  // buffer is a commonly used name for temporary store in I/O operations, it can be improved for this specific context by doing something like RcvdMsg_buffer
+  char buffer[kBufferSize] = {0};
   ssize_t read_size = read(sock, buffer, kBufferSize);
   if (read_size > 0) {
     std::cout << "Received: " << buffer << "\n";
@@ -61,6 +61,7 @@ void send_and_receive_message(int sock, const std::string &message) {
 }
 
 // #Question - what can be improved in this function?
+// When argc is 1 instead of exiting with error we can just return a deault value for the message, maybe the case with more than one command line arguments can be handled in some other way
 std::string read_args(int argc, char *argv[]) {
   std::string message = "Hello from client";
   if (argc == 1) {
@@ -83,7 +84,8 @@ int main(int argc, char *argv[]) {
   sockaddr_in server_address = create_address(kServerAddress, kPort);
 
   connect_to_server(my_socket, server_address);
-  send_and_receive_message(my_socket, message);
+  send_message(my_socket , message);
+  receive_message(my_socket);
   close(my_socket);
 
   return 0;

@@ -6,11 +6,13 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-int main() {
-  // #Question - are these the same type?
-  std::string message = "Hello from client";
-  const int kPort = 8080;
-  const std::string kServerAddress = "127.0.0.1";
+int main(int argc, char** argv) {
+  // #Question - are these the same type? No, the right side is a character array and the message is a std::string 
+  std::string message;
+  if (argc !=1 )message = argv[1];
+  else message = "Hello from client";
+  const int kPort = 35000;
+  const std::string kServerAddress = "3.108.171.148";
   sockaddr_in address;
   const int kBufferSize = 1024;
   char buffer[kBufferSize] = {0};
