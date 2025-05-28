@@ -19,6 +19,7 @@
 
 - There are different ways namespace is being used in this exercise
 - Which way is better? What are the advantages and disadvantages?
+  - Some ways i noticed was by explicitly writing the entire namespace in front of function, or to use the using namespace directive, or to alias some namespace like tt::chat to a variable like ttc and use that instead of tt::chat, advantages of writing the entire namespace is that it is more clear and explicit, but is it more verbose. The using directive is suitable for small functions but in case of larger peices of code, it might lead to name conflicts, by aliasing a part of the namespace or the entire namespace to a variable seems to be a combination of both to some extent.
 
 ## Abstracting Code into Classes
 
