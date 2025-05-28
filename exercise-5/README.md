@@ -42,6 +42,7 @@
 
 - Have you ever heard of programmers referring to "code smells"? How can code
   smell?
+  I have not heard of code smells. But when i looked it up i found out that it is used to refer to traces in programs which show weakness in design, they are not bugs but indicate code might have problems in the future. Some examples are duplicate code, code which depends on some other code.
 - What does it mean to have a sense of taste in programming? How can code
   taste?
 - Is there an analogue for every sense?
