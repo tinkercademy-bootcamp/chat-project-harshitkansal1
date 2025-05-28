@@ -27,8 +27,9 @@
 - **Note**: You don't have to use the code in this exercise as a starting point
 - You can use the code you wrote from previous exercises instead
 - How should you divide the code into files?
+  - It might be useful to make a header file for client and server to contain the class declarations.
 - What namespace and directory structure should you use? Why?
-
+  - Making a tt::chat::client namespace for the client similar to server seems like the right thing to do, also it helps to make a folder for client and server with their respective code and header files. This is because it helps maintain consistency and organises the code in a good way.
 ## Programming Sense of Taste
 
 - How do you judge what makes a particular choice of namespace and directory
