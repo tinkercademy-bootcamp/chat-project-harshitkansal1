@@ -14,7 +14,7 @@
 - Is this the best way to do it? 
   - Since there are multiple ways to do it, it is hard to define one way as best, it depends on the coding style and preferences of the people working in the project.
 - What are the advantages and disadvantages?
-
+  - The advantage seems to be that the code is broken down into a easy to understand format, utils.h containing any utlitites so be used by any files, server-main-the file to start server, server-client-the file to start client and the net folder contains chat-sockets.cc and h which contains functions realted to creating sockets. I don't see any apparent disadvantage.
 ## Introduction to Namespace
 
 - There are different ways namespace is being used in this exercise
