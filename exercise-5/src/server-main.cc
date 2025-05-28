@@ -8,33 +8,13 @@
 #include "utils.h"
 
 namespace tt::chat::server {
+class Server {
+  private:
+  int kPort;
+  int socket;
+  sockaddr_in address;
 
-void set_socket_options(int sock, int opt) {
-  namespace ttc = tt::chat;
-  auto err_code = setsockopt(sock, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
-                             &opt, sizeof(opt));
-  ttc::check_error(err_code < 0, "setsockopt() error\n");
-}
-
-int create_server_socket() {
-  int sock = net::create_socket();
-  set_socket_options(sock, 1);
-  return sock;
-}
-
-void bind_address_to_socket(int sock, sockaddr_in &address) {
-  namespace ttc = tt::chat;
-  auto err_code = bind(sock, (sockaddr *)&address, sizeof(address));
-  ttc::check_error(err_code < 0, "bind failed\n");
-}
-
-void listen_on_socket(int sock) {
-  namespace ttc = tt::chat;
-  auto err_code = listen(sock, 3);
-  ttc::check_error(err_code < 0, "listen failed\n");
-}
-
-void handle_accept(int sock) {
+  void handle_accept(int sock) {
   namespace ttc = tt::chat;
   const int kBufferSize = 1024;
   char buffer[kBufferSize] = {0};
@@ -54,22 +34,58 @@ void handle_accept(int sock) {
   close(sock);
 }
 
-sockaddr_in create_server_address(int port) {
-  namespace ttn = tt::chat::net;
-  sockaddr_in address = ttn::create_address(port);
-  address.sin_addr.s_addr = INADDR_ANY;
-  return address;
+  public:
+  Server(int kport) {
+    kPort = kport;
+  }
+
+void set_socket_options(int opt) {
+  namespace ttc = tt::chat;
+  auto err_code = setsockopt(socket, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
+                             &opt, sizeof(opt));
+  ttc::check_error(err_code < 0, "setsockopt() error\n");
+}
+void create_server_socket() {
+  socket = net::create_socket();
+  set_socket_options( 1);
+}
+void bind_address_to_socket() {
+  namespace ttc = tt::chat;
+  auto err_code = bind(socket, (sockaddr *)&address, sizeof(address));
+  ttc::check_error(err_code < 0, "bind failed\n");
 }
 
-void handle_connections(int sock, sockaddr_in &address) {
+void listen_on_socket() {
+  namespace ttc = tt::chat;
+  auto err_code = listen(socket, 3);
+  ttc::check_error(err_code < 0, "listen failed\n");
+}
+
+
+void create_server_address() {
+  namespace ttn = tt::chat::net;
+  address = ttn::create_address(kPort);
+  address.sin_addr.s_addr = INADDR_ANY;
+}
+
+void handle_connections() {
   socklen_t address_size = sizeof(address);
 
   while (true) {
-    int accepted_socket = accept(sock, (sockaddr *)&address, &address_size);
-    check_error(accepted_socket < 0, "Accept error n ");
+    int accepted_socket = accept(socket, (sockaddr *)&address, &address_size);
+    tt::chat::check_error(accepted_socket < 0, "Accept error n ");
     handle_accept(accepted_socket);
   }
 }
+
+ ~Server() {
+    if (socket >= 0) {
+      close(socket);
+      std::cout << "Server socket closed.\n";
+    }
+  }
+
+};
 
 } // namespace tt::chat::server
 
@@ -77,16 +93,16 @@ int main() {
   namespace ttc = tt::chat;
   const int kPort = 8080;
 
-  int my_socket = ttc::server::create_server_socket();
-  sockaddr_in address = ttc::server::create_server_address(kPort);
+  ttc::server::Server myserver(kPort);
+  myserver.create_server_socket();
+  myserver.create_server_address();
 
   // start listening on the socket
-  ttc::server::bind_address_to_socket(my_socket, address);
-  ttc::server::listen_on_socket(my_socket);
+  myserver.bind_address_to_socket();
+  myserver.listen_on_socket();
 
   std::cout << "Server listening on port " << kPort << "\n";
-  ttc::server::handle_connections(my_socket, address);
-  close(my_socket);
+  myserver.handle_connections();
 
   return 0;
 }
