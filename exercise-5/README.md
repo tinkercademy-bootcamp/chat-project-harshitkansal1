@@ -34,6 +34,7 @@
 
 - How do you judge what makes a particular choice of namespace and directory
   structure? 
+  - I think it should the namespace and directory structure should be grouped in the same way, it should be easy to navigate the structure in looking for a peice of code, the grouping and the naming should be logical.
 - How do you judge what makes a good naming convention or programming style?
 
 ## "Senses" in Programming
