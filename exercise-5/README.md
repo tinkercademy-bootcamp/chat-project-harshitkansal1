@@ -51,5 +51,6 @@
 - What other code senses can you think of?
   - sense of touch can be related to how easy it is to change the code and interact with the code, sense of sight can be realted to how easy it is to look at the code.
 - How many senses do humans have?
+  - 5 senses- touch, smell, taste, sight, hearing
 - When would you want to see something before you touch it?
 - When would you want to touch something before you see it?
