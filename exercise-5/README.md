@@ -36,6 +36,7 @@
   structure? 
   - I think it should the namespace and directory structure should be grouped in the same way, it should be easy to navigate the structure in looking for a peice of code, the grouping and the naming should be logical.
 - How do you judge what makes a good naming convention or programming style?
+  - A good naming convection or a programming style should be easy for another developer to look at the code and understand, it should be consistent, unambigous, descriptive. It should be easy to debug or refactor.
 
 ## "Senses" in Programming
 
