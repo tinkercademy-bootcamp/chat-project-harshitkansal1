@@ -15,6 +15,7 @@
 - How many different ways can this library be added into your project?
   - There are two ways, one is the header only version where you just add the include folder to my directory or in the compiled version i can compile and build the libary then use it.
 - What are the tradeoffs in the different ways?
+  - Header-only version is easy to setup and use but the compile times are longer, where as the in the compiled version, compile times are smaller but it is harder to setup.
 - Why are there so many different ways to do it?
   
 ## Static Linking vs Dynamic Linking
