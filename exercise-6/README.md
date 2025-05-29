@@ -17,6 +17,7 @@
 - What are the tradeoffs in the different ways?
   - Header-only version is easy to setup and use but the compile times are longer, where as the in the compiled version, compile times are smaller but it is harder to setup.
 - Why are there so many different ways to do it?
+  - The choice to use a particular way depends on the size of the project, and other requirements, for a small project header only version might work fine, and for a big project you might need to use the compiled version if you need smaller compile times.
   
 ## Static Linking vs Dynamic Linking
 
