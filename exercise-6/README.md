@@ -42,3 +42,4 @@
 - Which one is the best one?
   - The best package manager depends upon one's needs and project, some good package managers are conan, vcpkg, hunter, etc.
 - Which are the most notable ways to manage the compilation of C++ projects?
+  - Some of the most notable ways to manage compilation of c++ projects include make files, cmake and ninja.
