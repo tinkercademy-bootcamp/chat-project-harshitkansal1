@@ -11,6 +11,7 @@
 - How do you compile this file using the `g++` CLI?
   - i used the command g++ -Iinclude spdlog-hello-world-main.cc after putting the include folder in the same directory
 - What do you need to change in your makefile to use this library?
+  - Just add -Iinclude in the CXXFLAGS in the makefile and it worked
 - How many different ways can this library be added into your project?
 - What are the tradeoffs in the different ways?
 - Why are there so many different ways to do it?
