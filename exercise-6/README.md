@@ -13,6 +13,7 @@
 - What do you need to change in your makefile to use this library?
   - Just add -Iinclude in the CXXFLAGS in the makefile and it worked
 - How many different ways can this library be added into your project?
+  - There are two ways, one is the header only version where you just add the include folder to my directory or in the compiled version i can compile and build the libary then use it.
 - What are the tradeoffs in the different ways?
 - Why are there so many different ways to do it?
   
