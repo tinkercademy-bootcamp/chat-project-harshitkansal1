@@ -31,6 +31,7 @@
 ## Git Clone and Building from Source
 
 - Where is `g++` looking for the include files and library files?
+  - g++ looks for include files and library files in some default system paths like /usr/include , /usr/local/include, /usr/lib , /usr/local/lib, if we want to add place we can do so using -I and -L flag respectively.
 - How do you find out?
 
 ## C++ Package Managers
