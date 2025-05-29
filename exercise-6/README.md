@@ -33,6 +33,7 @@
 - Where is `g++` looking for the include files and library files?
   - g++ looks for include files and library files in some default system paths like /usr/include , /usr/local/include, /usr/lib , /usr/local/lib, if we want to add place we can do so using -I and -L flag respectively.
 - How do you find out?
+  - I found commands like echo | g++ -E -x c++ - -v and g++ -print-search-dirs online and they seem to work.
 
 ## C++ Package Managers
 
