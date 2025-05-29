@@ -26,6 +26,7 @@
 - What are the tradeoffs?
   - in static linking, the executable size is larger, in case of any updates to library executable has to be recompiled, compile time is slower, whereas in dynamic linking, executable size is smaller, in case of updates to library no need to recompile and compile time is faster, but its deployment is complex compared to static linking.
 - How do you enable static linking or dynamic linking in your makefile?
+  - By default, the linking is dynamic while using g++. To enable static linking we can use the -static flag, but that will require us to statically link the standard libraries as well, for statically linking some specific libraries we can provide their .a files in the g++ command.
 
 ## Git Clone and Building from Source
 
